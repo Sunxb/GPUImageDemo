@@ -28,7 +28,7 @@
 
 - (UITableView *)rootTableView {
     if (!_rootTableView) {
-        _rootTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, KWidth, KHeight-80) style:UITableViewStylePlain];
+        _rootTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 90, KWidth, KHeight-80) style:UITableViewStylePlain];
         _rootTableView.delegate = self;
         _rootTableView.dataSource = self;
     }
@@ -51,6 +51,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = self.dataArr[indexPath.row];
     return cell;
@@ -60,17 +61,19 @@
     NSString * vcStr = @"";
     switch (indexPath.row) {
         case 0:
+            //实时录制添加简单滤镜
             vcStr = @"SimpleVideoFilterViewController";
             break;
         case 1:
-            
+            //为相册视频添加简单滤镜
+            vcStr = @"PhotoAlbumVideoFilterViewController";
             break;
         default:
             break;
     }
     
     Class vc = NSClassFromString(vcStr);
-    [self presentViewController:[[vc alloc] init] animated:YES completion:nil];
+    [self.navigationController pushViewController:[[vc alloc]init] animated:YES];
     
     
 }

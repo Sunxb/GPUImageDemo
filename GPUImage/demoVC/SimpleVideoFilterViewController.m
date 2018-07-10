@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     // 设置摄像头
     _videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
     
@@ -43,10 +45,10 @@
     // 存储路径
     NSString * pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Movie.m4v"];
     // - 如果文件已存在,AVAssetWriter不允许直接写进新的帧,所以会删掉老的视频文件
-    unlink([pathToMovie UTF8String]); // If a file already exists, AVAssetWriter won't let you record new frames, so delete the old movie
+    unlink([pathToMovie UTF8String]); 
     self.movieURL = [NSURL fileURLWithPath:pathToMovie];
     
-    // 设置writer
+    // 设置writer 后面的size可改 ~ 现在来说480*640有点太差劲了
     _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:self.movieURL size:CGSizeMake(480.0, 640.0)];
     _movieWriter.encodingLiveVideo = YES;
     
@@ -76,18 +78,7 @@
         [self.movieWriter finishRecording];
         NSLog(@"Movie completed");
         // 写入相册
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:self.movieURL]) {
-            [library writeVideoAtPathToSavedPhotosAlbum:self.movieURL completionBlock:^(NSURL *assetURL, NSError *error) {
-                 dispatch_async(dispatch_get_main_queue(), ^{
-                     if (error) {
-                         NSLog(@"保存失败 -");
-                     } else {
-                         NSLog(@"保存到相册成功 - ");
-                     }
-                 });
-             }];
-        }
+        [self writeToPhotoAlbum];
     };
     
     [super clickedControlButton:start end:end];
@@ -96,19 +87,47 @@
 
 
 
+
+///////////////////////////////////////////////////////////////////
+
+- (void)writeToPhotoAlbum {
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:self.movieURL]) {
+        [library writeVideoAtPathToSavedPhotosAlbum:self.movieURL completionBlock:^(NSURL *assetURL, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (error) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误"
+                                                                    message:@"保存失败"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                    
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                    message:@"保存到相册成功"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                }
+            });
+        }];
+    }
+}
+
+- (void)dealloc {
+    
+    [self.filter removeTarget:self.movieWriter];
+    self.videoCamera.audioEncodingTarget = nil;
+    [self.movieWriter finishRecording];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

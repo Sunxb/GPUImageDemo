@@ -19,6 +19,9 @@
 		8D961B4D20F3455E002B07C8 /* GPUImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D961B4C20F3455E002B07C8 /* GPUImageUITests.m */; };
 		8D961B6320F3583A002B07C8 /* SimpleVideoFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D961B6220F3583A002B07C8 /* SimpleVideoFilterViewController.m */; };
 		8D961B6620F35896002B07C8 /* FilterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D961B6520F35896002B07C8 /* FilterBaseViewController.m */; };
+		8D961B6C20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D961B6A20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.m */; };
+		8D961B7120F44A47002B07C8 /* WID-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D961B6F20F44A47002B07C8 /* WID-small.jpg */; };
+		8D961B7220F44A47002B07C8 /* sample_iPod.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 8D961B7020F44A47002B07C8 /* sample_iPod.m4v */; };
 		9A3C622C294E66F630FBDB0C /* libPods-GPUImageTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E24332BD351C5446DE9FC208 /* libPods-GPUImageTests.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,10 @@
 		8D961B6220F3583A002B07C8 /* SimpleVideoFilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleVideoFilterViewController.m; sourceTree = "<group>"; };
 		8D961B6420F35896002B07C8 /* FilterBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterBaseViewController.h; sourceTree = "<group>"; };
 		8D961B6520F35896002B07C8 /* FilterBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterBaseViewController.m; sourceTree = "<group>"; };
+		8D961B6A20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumVideoFilterViewController.m; sourceTree = "<group>"; };
+		8D961B6B20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumVideoFilterViewController.h; sourceTree = "<group>"; };
+		8D961B6F20F44A47002B07C8 /* WID-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WID-small.jpg"; sourceTree = "<group>"; };
+		8D961B7020F44A47002B07C8 /* sample_iPod.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_iPod.m4v; sourceTree = "<group>"; };
 		CB941BD88B53DFF21B57852D /* libPods-GPUImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GPUImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24332BD351C5446DE9FC208 /* libPods-GPUImageTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GPUImageTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBF50E86D899E06ADD5D859 /* Pods-GPUImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImage/Pods-GPUImage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +154,8 @@
 		8D961B2720F3455C002B07C8 /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
+				8D961B7020F44A47002B07C8 /* sample_iPod.m4v */,
+				8D961B6F20F44A47002B07C8 /* WID-small.jpg */,
 				8D961B5D20F3574A002B07C8 /* demoVC */,
 				8D961B2820F3455C002B07C8 /* AppDelegate.h */,
 				8D961B2920F3455C002B07C8 /* AppDelegate.m */,
@@ -182,6 +191,8 @@
 		8D961B5D20F3574A002B07C8 /* demoVC */ = {
 			isa = PBXGroup;
 			children = (
+				8D961B6B20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.h */,
+				8D961B6A20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.m */,
 				8D961B6120F3583A002B07C8 /* SimpleVideoFilterViewController.h */,
 				8D961B6220F3583A002B07C8 /* SimpleVideoFilterViewController.m */,
 				8D961B6420F35896002B07C8 /* FilterBaseViewController.h */,
@@ -299,6 +310,8 @@
 			files = (
 				8D961B3520F3455E002B07C8 /* LaunchScreen.storyboard in Resources */,
 				8D961B3220F3455E002B07C8 /* Assets.xcassets in Resources */,
+				8D961B7120F44A47002B07C8 /* WID-small.jpg in Resources */,
+				8D961B7220F44A47002B07C8 /* sample_iPod.m4v in Resources */,
 				8D961B3020F3455C002B07C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +425,7 @@
 				8D961B3820F3455E002B07C8 /* main.m in Sources */,
 				8D961B6320F3583A002B07C8 /* SimpleVideoFilterViewController.m in Sources */,
 				8D961B2A20F3455C002B07C8 /* AppDelegate.m in Sources */,
+				8D961B6C20F449AD002B07C8 /* PhotoAlbumVideoFilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
