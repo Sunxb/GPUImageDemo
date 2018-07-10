@@ -25,24 +25,25 @@
     // 原图
     UIImage *inputImage = [UIImage imageNamed:@"WID-small.jpg"];
     
-    //
+    // 生成GPUImagePicture
     _sourcePicture = [[GPUImagePicture alloc] initWithImage:inputImage smoothlyScaleOutput:YES];
     
-    // 滤镜
+    // 随便用一个滤镜
     _sepiaFilter = [[GPUImageTiltShiftFilter alloc] init];
     
-    // 显示
+    // 如果要显示话,得创建一个GPUImageView来进行显示
     GPUImageView * imageView = [[GPUImageView alloc] initWithFrame:self.view.bounds];
     self.view = imageView;
     
     //
     [_sepiaFilter forceProcessingAtSize:imageView.sizeInPixels];
  
-    //
+    // 个人理解,这个add其实就是把_sourcePicture给_sepiaFilter来处理
     [_sourcePicture addTarget:_sepiaFilter];
-    
+    // 用这个imageView来显示_sepiaFilter处理的效果
     [_sepiaFilter addTarget:imageView];
     
+    // 开始!
     [_sourcePicture processImage];
     
     
