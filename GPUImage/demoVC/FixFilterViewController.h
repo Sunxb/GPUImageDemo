@@ -1,5 +1,5 @@
 //
-//  PhotoAlbumVideoFilterViewController.h
+//  FixFilterViewController.h
 //  GPUImage
 //
 //  Created by sunxiaobin on 2018/7/10.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-/// 相册内视频添加滤镜处理
+/// 混合滤镜
 
-@interface PhotoAlbumVideoFilterViewController : UIViewController
+@interface FixFilterViewController : UIViewController
 
 @end

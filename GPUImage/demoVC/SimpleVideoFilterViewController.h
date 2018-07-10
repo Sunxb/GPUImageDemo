@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FilterBaseViewController.h"
-/// 实时录制添加简单滤镜
+
+/// 相机录像添加实时滤镜
 
 @interface SimpleVideoFilterViewController : FilterBaseViewController
 

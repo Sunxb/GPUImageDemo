@@ -37,7 +37,11 @@
 
 -(NSArray *)dataArr {
     if (!_dataArr) {
-        _dataArr = @[@"实时录制添加简单滤镜",@"为相册视频添加简单滤镜"].copy;
+        _dataArr = @[@"相机录像添加实时滤镜",
+                     @"相册内视频添加滤镜处理",
+                     @"相机拍照添加实时滤镜",
+                     @"给已有的图片/照片添加滤镜",
+                     @"混合滤镜"].copy;
     }
     return _dataArr;
 }
@@ -61,12 +65,24 @@
     NSString * vcStr = @"";
     switch (indexPath.row) {
         case 0:
-            //实时录制添加简单滤镜
+            //相机录像添加实时滤镜
             vcStr = @"SimpleVideoFilterViewController";
             break;
         case 1:
-            //为相册视频添加简单滤镜
+            //相册内视频添加滤镜处理
             vcStr = @"PhotoAlbumVideoFilterViewController";
+            break;
+        case 2:
+            //相机拍照添加实时滤镜
+            vcStr = @"PhotoFilterViewController";
+            break;
+        case 3:
+            //给已有的图片/照片添加滤镜
+            vcStr = @"ImageFilterViewController";
+            break;
+        case 4:
+            //混合滤镜
+            vcStr = @"FixFilterViewController";
             break;
         default:
             break;
