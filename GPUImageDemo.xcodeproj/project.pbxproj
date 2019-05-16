@@ -32,7 +32,6 @@
 		8D5590E7228D4A1300C657BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D5590E9228D4A1500C657BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D5590EC228D4A1500C657BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8D5590EE228D4A1500C657BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D5590EF228D4A1500C657BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D5590F6228D4AA900C657BA /* WID-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WID-small.jpg"; sourceTree = "<group>"; };
 		8D5590F7228D4AA900C657BA /* sample_iPod.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample_iPod.m4v; sourceTree = "<group>"; };
@@ -114,7 +113,6 @@
 				8D5590E6228D4A1300C657BA /* Main.storyboard */,
 				8D5590E9228D4A1500C657BA /* Assets.xcassets */,
 				8D5590EB228D4A1500C657BA /* LaunchScreen.storyboard */,
-				8D5590EE228D4A1500C657BA /* Info.plist */,
 				8D5590EF228D4A1500C657BA /* main.m */,
 			);
 			path = GPUImageDemo;
