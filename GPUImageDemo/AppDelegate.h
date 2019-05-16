@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  GPUImage
+//  GPUImageDemo
 //
-//  Created by sunxiaobin on 2018/7/9.
-//  Copyright © 2018年 sun. All rights reserved.
+//  Created by sunxiaobin on 2019/5/16.
+//  Copyright © 2019 sun. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

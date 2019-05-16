@@ -1,13 +1,14 @@
 //
 //  AppDelegate.m
-//  GPUImage
+//  GPUImageDemo
 //
-//  Created by sunxiaobin on 2018/7/9.
-//  Copyright © 2018年 sun. All rights reserved.
+//  Created by sunxiaobin on 2019/5/16.
+//  Copyright © 2019 sun. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,10 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc]init]];
-                                      
     return YES;
 }
 

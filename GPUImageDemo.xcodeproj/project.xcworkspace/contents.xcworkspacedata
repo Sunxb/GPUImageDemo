@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:GPUImage.xcodeproj">
+      location = "self:GPUImageDemo.xcodeproj">
    </FileRef>
 </Workspace>
